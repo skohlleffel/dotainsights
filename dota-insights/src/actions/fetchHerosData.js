@@ -1,10 +1,7 @@
 import axios from 'axios';
 
-
-// https://api.opendota.com/api/players/{account_id}/matches
-
-export const fetchData = (acct) => {
-    var apiUrl = "https://api.opendota.com/api/players/" + acct + "/matches";
+export const fetchHerosData = () => {
+    var apiUrl = "https://api.opendota.com/api/heroes";
     return (dispatch) => {
         return axios.get(apiUrl)
             .then(response => {
@@ -12,12 +9,18 @@ export const fetchData = (acct) => {
             })
             .then(data => {
                 dispatch({
-                    type: "FETCH_DATA",
+                    type: "FETCH_HEROS_DATA",
                     payload: {
-                        data: data
+                        heros_data: data
                     }
                 })
             })
+            .then(dispatch({
+                type: "SET_HEROS",
+                payload: {
+                    scope: "heros",
+                }
+            }))
             .catch(error => {
                 throw (error);
             });

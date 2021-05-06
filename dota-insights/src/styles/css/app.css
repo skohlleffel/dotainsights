@@ -1,0 +1,19 @@
+#TimeChart {
+    height: 600px;
+    width: 800px;
+  }
+
+#HeroCharts {
+    height: 600px;
+    width: 800px;
+  }
+
+#AccountId {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+#RangeSlider {
+  padding-left: 20px;
+  padding-right: 20px;
+}
