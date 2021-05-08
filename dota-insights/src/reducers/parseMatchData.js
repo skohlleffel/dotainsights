@@ -1,6 +1,6 @@
-const parseDataReducer = (state = false, action) => {
+const parseMatchDataReducer = (state = false, action) => {
     switch(action.type){
-        case 'FETCH_DATA':
+        case 'FETCH_MATCH_DATA':
             var win_loss = [];
             action.payload.data.forEach(function(element) {
                 // radiant win
@@ -31,4 +31,4 @@ const parseDataReducer = (state = false, action) => {
             return state;
     }
 }
-export default parseDataReducer;
+export default parseMatchDataReducer;

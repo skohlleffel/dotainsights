@@ -1,8 +1,8 @@
-const scopeReducer = (state = "overall", action) => {
+const scopeReducer = (state = "match_time", action) => {
     switch(action.type){
-        case 'SET_OVERALL':
+        case 'SET_MATCH_TIME':
             return action.payload.scope;
-        case 'SET_HEROS':
+        case 'SET_LAST_MATCH':
             return action.payload.scope;
         default:
             return state;

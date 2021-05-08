@@ -1,24 +1,24 @@
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchHerosData} from '../actions/fetchHerosData';
+import {getHeroMatchData} from '../actions/getHeroMatchData';
 
 const animatedComponents = makeAnimated();
 
 function HerosSelector() {
   const heros_list = useSelector(state => state.herosList);
-  const accountId = useSelector(state => state.accountId)
+  const matchData = useSelector(state => state.openDotaData)
   const scope = useSelector(state => state.scope);
   const dispatch = useDispatch();
 
   return (
       <div>
-          {scope==='heros' ?
+          {scope==='match_time' && matchData ?
             <Select
             closeMenuOnSelect={false}
             components={animatedComponents}
             options={heros_list}
-            onChange={(value) => dispatch(fetchHerosData(accountId, value))}
+            onChange={(value) => dispatch(getHeroMatchData(matchData, value))}
           />
       : ''}
       </div>

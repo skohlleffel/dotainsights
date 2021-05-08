@@ -9,7 +9,6 @@ function HeroSpecificTimeChart() {
     const scope = useSelector(state => state.scope);
     const duration = useSelector(state => state.gameDuration);
     const herosData = useSelector(state => state.herosData);
-    let g = [];
     let wins = 0
     let losses = 0;
     // format data for graphing

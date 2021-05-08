@@ -27,7 +27,7 @@ function WinLossTimeChart() {
     let total_games = wins + losses
     return (
         <>
-            {data && scope==='overall' ?
+            {data && scope==='match_time' ?
                 <ResponsivePie
                     data={graph_data}
                     margin={{ top: 70, right: 0, bottom: 70, left: 0 }}

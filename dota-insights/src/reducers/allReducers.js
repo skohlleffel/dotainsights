@@ -1,20 +1,20 @@
 import accountIdReducer from './accountId';
-import parseDataReducer from './parseData';
+import parseMatchDataReducer from './parseMatchData';
 import gameDurationReducer from './gameDuration';
-import parseHerosReducer from './parseHeros';
+import getHeroMatchDataReducer from './getHeroMatchData';
 import scopeReducer from './scope';
 import selectHerosReducer from './selectHeros';
-import herosListReducer from './getHerosList'
+import parseHeroListReducer from './parseHeroList'
 import {combineReducers} from 'redux';
 
 const allReducers = combineReducers({
    accountId: accountIdReducer,
-   openDotaData: parseDataReducer,
+   openDotaData: parseMatchDataReducer,
    gameDuration: gameDurationReducer,
-   herosData: parseHerosReducer,
+   heroData: getHeroMatchDataReducer,
    scope: scopeReducer,
    selectedHeros: selectHerosReducer,
-   herosList: herosListReducer,
+   herosList: parseHeroListReducer,
 });
 
 export default allReducers;
