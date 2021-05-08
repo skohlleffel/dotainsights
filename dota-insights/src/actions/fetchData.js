@@ -17,11 +17,14 @@ export const fetchData = (acct) => {
                     payload: {
                         data: data
                     }
+                });
+                 dispatch({
+                    type: 'GET_HERO_MATCH_DATA',
+                    payload: {
+                        data: data
+                    }
                 })
             })
-            .catch(error => {
-                throw (error);
-            });
         return axios.get(apiUrl)
             .then(response => {
                 return response.data

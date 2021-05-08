@@ -24,11 +24,12 @@ const handle = props => {
 function RangeSlider() {
     const data = useSelector(state => state.openDotaData);
     const duration = useSelector(state => state.gameDuration);
+    const scope = useSelector(state => state.scope);
     const dispatch = useDispatch();
 
     return (
         <div>
-            {data ?
+            {data && scope === "match_time" ?
                 <Range 
                 value={duration} 
                 allowCross={false}

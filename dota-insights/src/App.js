@@ -5,7 +5,6 @@ import WinLossTimeChart from './components/winLossTimeChart';
 import RangeSlider from './components/rangeSlider';
 import Scope from './components/scope';
 import HerosSelector from './components/herosSelector';
-import HeroSpecificTimeChart from './components/heroSpecificTimeChart';
 
 function App() {
   return (
@@ -32,12 +31,7 @@ function App() {
         <Col md={12} xs={12} lg={12}>
           <HerosSelector />         
         </Col>        
-      </Row>
-      <Row className="justify-content-md-center">
-        <Col id="HeroCharts" md={12} xs={12} lg={12}>
-          <HeroSpecificTimeChart />
-        </Col>
-      </Row>  
+      </Row> 
     </Container>
   );
 }

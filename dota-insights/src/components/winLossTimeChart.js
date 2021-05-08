@@ -1,10 +1,13 @@
 import {useSelector} from 'react-redux';
 import { ResponsivePie } from '@nivo/pie';
+import {graphOverlay} from "../styles/graphOverlay";
+import abaddon from "../data/heroes/abaddon.png";
+import "../styles/css/app.css";
 
   
 function WinLossTimeChart() {
     const scope = useSelector(state => state.scope)
-    const data = useSelector(state => state.openDotaData);
+    const data = useSelector(state => state.heroData);
     const duration = useSelector(state => state.gameDuration);
     let wins = 0
     let losses = 0;
@@ -24,10 +27,14 @@ function WinLossTimeChart() {
             "value": losses,
         }
     ];
-    let total_games = wins + losses
+    let total_games = wins + losses;
+    if (data && scope === 'match_time') {
+        console.log('working')
+    }
     return (
         <>
             {data && scope==='match_time' ?
+            <>
                 <ResponsivePie
                     data={graph_data}
                     margin={{ top: 70, right: 0, bottom: 70, left: 0 }}
@@ -44,6 +51,12 @@ function WinLossTimeChart() {
                     arcLabelsTextColor="#333333"
                     arcLabel={function(e){return (e.value/total_games*100).toFixed(2) + "%"}}
                 />
+                <div id="abs" style={graphOverlay.overlay}>
+                    <div id="image-cropper">
+                    {<img id="hero-img" src={abaddon} alt="Hashmap Logo" width="420px"/>}
+                    </div>
+                </div>
+            </>
             : ''}    
         </>              
     )
