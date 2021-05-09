@@ -4,7 +4,8 @@ import gameDurationReducer from './gameDuration';
 import getHeroMatchDataReducer from './getHeroMatchData';
 import scopeReducer from './scope';
 import selectHerosReducer from './selectHeros';
-import parseHeroListReducer from './parseHeroList'
+import parseHeroListReducer from './parseHeroList';
+import heroJpegReducer from './heroJpeg';
 import {combineReducers} from 'redux';
 
 const allReducers = combineReducers({
@@ -15,6 +16,7 @@ const allReducers = combineReducers({
    scope: scopeReducer,
    selectedHeros: selectHerosReducer,
    herosList: parseHeroListReducer,
+   heroJpeg: heroJpegReducer
 });
 
 export default allReducers;
