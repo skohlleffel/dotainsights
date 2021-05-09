@@ -1,3 +1,5 @@
+// https://api.steampowered.com/IEconDOTA2_570/GetHeroes/v0001/?key=api_key
+
 export const heroNames = [
     {
         "name":"npc_dota_hero_antimage",

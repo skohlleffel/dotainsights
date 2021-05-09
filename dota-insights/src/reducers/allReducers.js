@@ -3,9 +3,10 @@ import parseMatchDataReducer from './parseMatchData';
 import gameDurationReducer from './gameDuration';
 import getHeroMatchDataReducer from './getHeroMatchData';
 import scopeReducer from './scope';
-import selectHerosReducer from './selectHeros';
 import parseHeroListReducer from './parseHeroList';
+import lastMatchIdReducer from './getLastMatchId';
 import heroJpegReducer from './heroJpeg';
+import parseLastMatchDataReducer from './parseLastMatchData'
 import {combineReducers} from 'redux';
 
 const allReducers = combineReducers({
@@ -14,9 +15,10 @@ const allReducers = combineReducers({
    gameDuration: gameDurationReducer,
    heroData: getHeroMatchDataReducer,
    scope: scopeReducer,
-   selectedHeros: selectHerosReducer,
    herosList: parseHeroListReducer,
-   heroJpeg: heroJpegReducer
+   heroJpeg: heroJpegReducer,
+   lastMatchId: lastMatchIdReducer,
+   lastMatchData: parseLastMatchDataReducer,
 });
 
 export default allReducers;

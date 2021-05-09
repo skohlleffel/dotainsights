@@ -1,13 +1,16 @@
 import {heroNames} from '../data/heroNames';
 
+// dota hero name api
+
 export const getHeroMatchData = (matchData, id) => {
 
     // build hero picture api url
-    var heroImageApiUrl = "http://cdn.dota2.com/apps/dota2/images/heroes/" + id.label.replace(" ", "_").toLowerCase() + "_vert.jpg"; 
+    var heroImageApiUrl = false;
 
+    // set hero image based on selected hero
     heroNames.forEach(element => {
-        (element.id === id.value) ? heroImageApiUrl = "http://cdn.dota2.com/apps/dota2/images/heroes/" + element.name.replace("npc_dota_hero_", "") + "_vert.jpg" : console.log();
-    })
+        (element.id === id.value) ? heroImageApiUrl = "http://cdn.dota2.com/apps/dota2/images/heroes/" + element.name.replace("npc_dota_hero_", "") + "_full.png" : console.log();
+    });
     
     // parse match data for all or specific hero wins
     var hero_data = [];

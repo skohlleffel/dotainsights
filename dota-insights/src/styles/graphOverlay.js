@@ -9,7 +9,7 @@ export const graphOverlay = {
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      fontSize: 96,
+      fontSize: 24,
       color: "black",
       textAlign: "center",
       pointerEvents: "none",

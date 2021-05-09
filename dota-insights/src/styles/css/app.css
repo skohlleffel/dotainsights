@@ -14,8 +14,8 @@
 }
 
 #image-cropper {
-  width: 232px;
-  height: 232px;
+  width: 150px;
+  height: 150px;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
@@ -24,7 +24,22 @@
 #hero-img {
   display: inline;
   margin: 0 auto;
-  margin-left: -25%;
+  margin-left: -50%;
   height: 100%;
   width: auto;
+}
+
+#dota2-logo {
+  display: inline;
+  margin: 0 auto;
+  margin-left: 0%;
+  height: 100%;
+  width: auto;
+}
+
+#dota2-logo-cropper {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
 }

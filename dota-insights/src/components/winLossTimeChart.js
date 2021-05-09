@@ -1,6 +1,7 @@
 import {useSelector} from 'react-redux';
 import { ResponsivePie } from '@nivo/pie';
 import {graphOverlay} from "../styles/graphOverlay";
+import dota2Logo from '../data/dota-2.png';
 import "../styles/css/app.css";
 
   
@@ -28,9 +29,9 @@ function WinLossTimeChart() {
         }
     ];
     let total_games = wins + losses;
-    return (
+    if (scope === "match_time") {return (
         <>
-            {data && scope==='match_time' ?
+        {data && heroImageUrl ?
             <>
                 <ResponsivePie
                     data={graph_data}
@@ -54,9 +55,37 @@ function WinLossTimeChart() {
                     </div>
                 </div>
             </>
-            : ''}    
+            : data && !heroImageUrl ?
+            <>
+                <ResponsivePie
+                    data={graph_data}
+                    margin={{ top: 70, right: 0, bottom: 70, left: 0 }}
+                    colors={{ scheme: 'category10' }}
+                    innerRadius={0.5}
+                    padAngle={0.7}
+                    cornerRadius={3}
+                    activeOuterRadiusOffset={8}
+                    arcLinkLabelsSkipAngle={10}
+                    arcLinkLabelsTextColor="#333333"
+                    arcLinkLabelsThickness={2}
+                    arcLinkLabelsColor={{ from: 'color' }}
+                    arcLabelsSkipAngle={10}
+                    arcLabelsTextColor="#333333"
+                    arcLabel={function(e){return (e.value/total_games*100).toFixed(2) + "%"}}
+                />
+                <div id="abs" style={graphOverlay.overlay}>
+                    <div id="dota2-logo-cropper">
+                    {<img id="dota2-logo" src={dota2Logo} alt="Dota Hero"/>}
+                    </div>
+                </div>
+            </>
+            : ''
+        }
+
         </>              
-    )
+    )} else {
+        return (<div></div>)
+    }
 };
    
 export default WinLossTimeChart;
