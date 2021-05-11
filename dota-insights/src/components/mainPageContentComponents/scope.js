@@ -1,8 +1,8 @@
 import {DropdownButton, Dropdown} from 'react-bootstrap';
 
 import {useDispatch, useSelector} from 'react-redux';
-import {selectLastMatch} from '../actions/selectLastMatch';
-import {selectMatchTime} from '../actions/selectMatchTime';
+import {selectLastMatch} from '../../actions/last_match/selectLastMatch';
+import {selectMatchTime} from '../../actions/match_time/selectMatchTime';
 
 function Scope() {
   const data = useSelector(state => state.openDotaData);

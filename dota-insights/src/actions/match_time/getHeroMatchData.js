@@ -1,4 +1,4 @@
-import {heroNames} from '../data/heroNames';
+import {heroNames} from '../../data/heroNames';
 
 // dota hero name api
 

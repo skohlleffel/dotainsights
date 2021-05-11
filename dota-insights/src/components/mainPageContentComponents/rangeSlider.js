@@ -1,5 +1,5 @@
 import {useSelector, useDispatch} from 'react-redux';
-import {setGameDuration} from '../actions/setGameDuration';
+import {setGameDuration} from '../../actions/match_time/setGameDuration';
 import Slider, { SliderTooltip} from 'rc-slider';
 import 'rc-slider/assets/index.css';
 

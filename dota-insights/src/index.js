@@ -12,6 +12,11 @@ import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(allReducers, composeEnhancer(applyMiddleware(thunk)));
 
+const styleLink = document.createElement("link");
+styleLink.rel = "stylesheet";
+styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
+document.head.appendChild(styleLink);
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

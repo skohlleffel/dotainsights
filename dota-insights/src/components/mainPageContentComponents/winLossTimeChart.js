@@ -1,8 +1,8 @@
 import {useSelector} from 'react-redux';
 import { ResponsivePie } from '@nivo/pie';
-import {graphOverlay} from "../styles/graphOverlay";
-import dota2Logo from '../data/dota-2.png';
-import "../styles/css/app.css";
+import {graphOverlay} from "../../styles/graphOverlay";
+import dota2Logo from '../../data/dota-2.png';
+import "../../styles/css/app.css";
 
   
 function WinLossTimeChart() {
@@ -31,7 +31,7 @@ function WinLossTimeChart() {
     let total_games = wins + losses;
     if (scope === "match_time") {return (
         <>
-        {data && heroImageUrl ?
+        {heroImageUrl && total_games !== 0 ?
             <>
                 <ResponsivePie
                     data={graph_data}
@@ -55,7 +55,7 @@ function WinLossTimeChart() {
                     </div>
                 </div>
             </>
-            : data && !heroImageUrl ?
+            : !heroImageUrl && total_games !== 0 ?
             <>
                 <ResponsivePie
                     data={graph_data}
@@ -76,6 +76,14 @@ function WinLossTimeChart() {
                 <div id="abs" style={graphOverlay.overlay}>
                     <div id="dota2-logo-cropper">
                     {<img id="dota2-logo" src={dota2Logo} alt="Dota Hero"/>}
+                    </div>
+                </div>
+            </>
+            : total_games === 0 && data ?
+            <>
+                <div id="abs" style={graphOverlay.overlay}>
+                    <div id="dota2-logo-cropper">
+                    {<img id="dota2-logo" alt="No Games at this time range"/>}
                     </div>
                 </div>
             </>
