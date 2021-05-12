@@ -28,7 +28,7 @@ jobs:
       - aws_s3/sync:
           from: /tmp/workspace/build
           overwrite: true
-          to: "s3://dota-insights"
+          to: "s3://dota-rection.com"
 
 workflows:
   build_and_deploy:
