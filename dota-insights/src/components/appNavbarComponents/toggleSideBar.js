@@ -10,11 +10,11 @@ export default function ToggleSideBar() {
     return (
         <div>
             {matchData ? 
-            <Button onClick={() => dispatch(viewSideBar(!sideBarStatus))}>
+            <Button size="lg" variant="dark" onClick={() => dispatch(viewSideBar(!sideBarStatus))}>
                 Select Heros
             </Button>
             :
-            <Button disabled={true}>
+            <Button size="lg" variant="dark" disabled={true}>
                 Select Heros
             </Button>
             }

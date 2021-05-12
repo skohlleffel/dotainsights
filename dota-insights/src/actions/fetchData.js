@@ -38,6 +38,12 @@ export const fetchData = (acct) => {
                     payload: {
                         last_match: data[0].match_id
                     }
+                });
+                dispatch({
+                    type: "FETCH_HERO_JPEG",
+                    payload: {
+                        heroJpeg: false
+                    },
                 })
             })
         // open dota heroes api call

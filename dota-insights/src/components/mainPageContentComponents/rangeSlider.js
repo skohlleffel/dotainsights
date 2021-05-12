@@ -30,6 +30,8 @@ function RangeSlider() {
     return (
         <div>
             {data && scope === "match_time" ?
+              <div>
+                <h2 style={{textAlign: "center", paddingBottom: "20px"}}>Use the slider to select a match time range.</h2>
                 <Range 
                 value={duration} 
                 allowCross={false}
@@ -42,6 +44,7 @@ function RangeSlider() {
                      return hours + "h " + minutes + "m";        
                    }}
                 />
+              </div>
         : ''}
         </div>
     )

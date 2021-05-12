@@ -83,7 +83,7 @@ function WinLossTimeChart() {
             <>
                 <div id="abs" style={graphOverlay.overlay}>
                     <div id="dota2-logo-cropper">
-                    {<img id="dota2-logo" alt="No Games at this time range"/>}
+                        <h1>No Games at this Time Range</h1>
                     </div>
                 </div>
             </>
